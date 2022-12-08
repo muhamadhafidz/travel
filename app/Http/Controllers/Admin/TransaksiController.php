@@ -11,7 +11,7 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $data = Transaction::with('user')->get();
+        $data = Transaction::with(['user', 'payment'])->get();
 
         return view('admin.pages.transaksi.index', compact('data'));
     }

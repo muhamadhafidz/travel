@@ -141,7 +141,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Silahkan melakukan transfer ke nomor rekening <br> <b class="text-success fs-4">0123912391293 a/n Navil Store</b>
+            Silahkan melakukan transfer ke nomor rekening <br> <b class="text-success fs-4">0123912391293 a/n pulau tidung</b>
             <br>
             Sebesar nominal yang harus dibayarkan
             <br>

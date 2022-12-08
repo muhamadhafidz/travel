@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{ route('user.home') }}" class="brand-link text-center font-weight-bold">
       {{-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-      <span class="brand-text font-weight-normal">Navil Store Admin</span>
+      <span class="brand-text font-weight-normal">pulau tidung Admin</span>
     </a>
 
     <!-- Sidebar -->
@@ -49,6 +49,12 @@
             <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ Request::is('admin/gallery*') ? 'active' : '' }}">
               <i class="fas fa-users nav-icon"></i>
               <p>Master Galleries</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.about.index') }}" class="nav-link {{ Request::is('admin/about*') ? 'active' : '' }}">
+              <i class="fas fa-users nav-icon"></i>
+              <p>Master About</p>
             </a>
           </li>
           <li class="nav-item">

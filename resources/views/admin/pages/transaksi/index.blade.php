@@ -28,6 +28,7 @@
                             <th>Jumlah Orang</th>
                             <th>Total Bayar</th>
                             <th>Alamat</th>
+                            <th>Bukti bayar</th>
                             <th>Status</th>
                             <th>Aksi</th>
                           </tr>
@@ -53,6 +54,11 @@
                             <td>
                                 {!! $item->alamat_kirim !!}
                             </td>
+                            @if ($item->payment)
+                            <td><img style="height: 40px" src="{{ asset('storage/'.$item->payment->bukti_bayar) }}"></td>
+                            @else
+                            <td>-</td>
+                            @endif
                             <td>
                                 @if (strtolower($item->status) == "menunggu konfirmasi" || strtolower($item->status) == "menunggu input ongkir")
                                 <span class="badge bg-secondary text-light">{{ $item->status }}</span>

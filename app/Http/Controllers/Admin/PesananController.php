@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Transaction;
 use App\User_point;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use PDF;
 
@@ -18,7 +19,7 @@ class PesananController extends Controller
      */
     public function index()
     {
-        $data = Transaction::with(['transaction_products', 'user'])->get();
+        $data = Transaction::with(['transaction_products', 'user'])->where('user_id', Auth::user()->id)->get();
         return view('admin.pages.pesanan.index', [
             'data' => $data
         ]);
@@ -183,7 +184,7 @@ class PesananController extends Controller
         $tran->kurir = $item['kurir'];
         $tran->resi = $item['resi'];
         $tran->status = 'pesanan dikirim';
-        $tran->keterangan = 'pesanan telah dikirim oleh Navil Store';
+        $tran->keterangan = 'pesanan telah dikirim oleh pulau tidung';
 
         $tran->save();
 
@@ -199,7 +200,7 @@ class PesananController extends Controller
             'data' => $data 
             ])->setPaper('A4','potrait');
   
-        return $pdf->download('Navil Store - '.$data->invoice.'.pdf');
+        return $pdf->download('pulau tidung - '.$data->invoice.'.pdf');
 
         // return redirect()->back();
     }

@@ -12,7 +12,7 @@
                                 <a href="" class="text-dark font-weight-bold"><i class="right fas fa-angle-left"></i> kembali</a>
                             </div>
                             <div class="col d-flex justify-content-end">
-                                <h4 class="card-title font-weight-normal">Buat Gallery</h4>
+                                <h4 class="card-title font-weight-normal">Edit About</h4>
                             </div>
                         </div>
                     </div>
@@ -26,16 +26,17 @@
                     </div>
                     @endif
                     <div class="card-body mx-5">
-                        <form method="POST" action="{{ route('admin.gallery.store') }}" enctype="multipart/form-data" id="form">
+                        <form method="POST" action="{{ route('admin.about.update', $data->id) }}" enctype="multipart/form-data" id="form">
                             @csrf
-                            <h5>Informasi Galleri</h5>
+                            @method('PUT')
+                            <h5>Informasi About</h5>
                               
                             {{-- <hr> --}}
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="judul">Judul</label>
-                                        <input type="text" class="form-control @error('judul') is-invalid @enderror"  id="judul" name="judul" value="{{ old('judul') ? old('judul') : '' }}" required>
+                                        <input type="text" class="form-control @error('judul') is-invalid @enderror"  id="judul" name="judul" value="{{ old('judul') ? old('judul') : $data->judul }}" required>
                                         @error('judul')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -44,27 +45,33 @@
                                     </div>
                                 </div>
                             </div>
-                           
-                            <div class="form-group">
-                                <label for="kategori">Kategori</label>
-                                <select class="form-control" name="kategori" id="kategori">
-                                    <option value="kerangka-hiu">kerangka hiu</option>
-                                    <option value="nemo">nemo</option>
-                                    <option value="mangrove">mangrove</option>
-                                    <option value="fasilitas">fasilitas</option>
-                                </select>
-                                @error('kategori')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <hr>
                             
-                            <div class="form-group">
-                                <label for="image">Gambar</label>
-                                <input type="file" class="form-control-file" id="image" name="image" required>
-                              </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="keterangan">Keterangan</label>
+                                        <textarea class="form-control @error('keterangan') is-invalid @enderror"  id="keterangan" name="keterangan" required>{{ old('keterangan') ? old('keterangan') : $data->keterangan }}</textarea>
+                                        @error('keterangan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="deskripsi">deskripsi</label>
+                                        <textarea class="form-control @error('deskripsi') is-invalid @enderror"  id="deskripsi" name="deskripsi" required rows="5">{{ old('deskripsi') ? old('deskripsi') : $data->deskripsi }}</textarea>
+                                        @error('deskripsi')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
                             <div class="btn-bap text-right">
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>
@@ -124,7 +131,7 @@
         function hapus1(that){
             // console.log($(that).text());
             $(that).remove();
-            $('#image2').val('');
+            $('#image2').val($data->judul);
             var route = "{{ asset('assets/admin/img/add-foto.png') }}";
             $('#foto2').attr("src", route);
             $('#ubah-1').html('Pilih Foto');

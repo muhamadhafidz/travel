@@ -48,6 +48,10 @@ Route::middleware(['auth'])->group(function() {
         Route::put('/gallery/update/{id}', 'Admin\MasterGalleryController@update')->name('gallery.update');
         Route::delete('/gallery/destroy/{id}', 'Admin\MasterGalleryController@destroy')->name('gallery.destroy');
 
+        Route::get('/about', 'Admin\MasterAboutController@index')->name('about.index');
+        Route::get('/about/edit/{id}', 'Admin\MasterAboutController@edit')->name('about.edit');
+        Route::put('/about/update/{id}', 'Admin\MasterAboutController@update')->name('about.update');
+
         Route::get('/pelanggan', 'Admin\PelangganController@index')->name('pelanggan.index');
         Route::delete('/pelanggan/destroy/{id}', 'Admin\PelangganController@destroy')->name('pelanggan.destroy');
     });

@@ -120,11 +120,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" id="uploadBuktiForm" method="POST">
+        <form action="" id="uploadBuktiForm" method="POST" enctype="multipart/form-data">
           @method('PUT')
           @csrf
           <div class="form-group">
-            <input type="file" class="form-control" >
+            <input type="file" class="form-control" name="image">
           </div>
           <button type="submit" class="btn btn-success">Submit</button>
         </form>

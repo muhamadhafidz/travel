@@ -85,4 +85,12 @@ class MasterGalleryController extends Controller
         
         return redirect()->route('admin.gallery.index');
     }
+
+    public function destroy($id)
+    {
+        $data = Gallery::findOrFail($id);
+        $data->delete();
+
+        return redirect()->route('admin.gallery.index');
+    }
 }
