@@ -52,6 +52,10 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/about/edit/{id}', 'Admin\MasterAboutController@edit')->name('about.edit');
         Route::put('/about/update/{id}', 'Admin\MasterAboutController@update')->name('about.update');
 
+        Route::get('/content', 'Admin\MasterHomeContentController@index')->name('content.index');
+        Route::get('/content/edit/{id}', 'Admin\MasterHomeContentController@edit')->name('content.edit');
+        Route::put('/content/update/{id}', 'Admin\MasterHomeContentController@update')->name('content.update');
+
         Route::get('/pelanggan', 'Admin\PelangganController@index')->name('pelanggan.index');
         Route::delete('/pelanggan/destroy/{id}', 'Admin\PelangganController@destroy')->name('pelanggan.destroy');
     });

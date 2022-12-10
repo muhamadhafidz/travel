@@ -39,7 +39,7 @@
           
           <li class="nav-item">
             <a href="{{ route('admin.transaksi.index') }}" class="nav-link {{ Request::is('admin/transaksi*') ? 'active' : '' }}">
-              <i class="fas fa-boxes nav-icon"></i>
+              <i class="nav-icon fas fa-exchange-alt"></i>
               <p>Transaksi <span class="right badge badge-light">{{ App\Transaction::count() }}</span></p>
             </a>
           </li>
@@ -47,19 +47,25 @@
           
           <li class="nav-item">
             <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ Request::is('admin/gallery*') ? 'active' : '' }}">
-              <i class="fas fa-users nav-icon"></i>
+              <i class="nav-icon fas fa-images"></i>
               <p>Master Galleries</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('admin.about.index') }}" class="nav-link {{ Request::is('admin/about*') ? 'active' : '' }}">
-              <i class="fas fa-users nav-icon"></i>
+              <i class="nav-icon fas fa-house-user"></i>
               <p>Master About</p>
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('admin.content.index') }}" class="nav-link {{ Request::is('admin/content*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-pager"></i>
+              <p>Master Content</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.pelanggan.index') }}" class="nav-link {{ Request::is('admin/pelanggan*') ? 'active' : '' }}">
-              <i class="fas fa-users nav-icon"></i>
+              <i class="nav-icon fas fa-users nav-icon"></i>
               <p>Pelanggan</p>
             </a>
           </li>
