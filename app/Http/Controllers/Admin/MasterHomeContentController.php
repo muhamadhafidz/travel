@@ -28,7 +28,6 @@ class MasterHomeContentController extends Controller
     {
         $data = $request->validate([
             'judul' => 'required',
-            'keterangan' => 'required',
             'deskripsi' => 'required',
         ]);
         $about = Home_content::findOrFail($id);
@@ -36,7 +35,6 @@ class MasterHomeContentController extends Controller
 
         $about->judul = $data['judul'];
         $about->deskripsi = $data['deskripsi'];
-        $about->keterangan = $data['keterangan'];
         $about->save();
         
         return redirect()->route('admin.content.index');

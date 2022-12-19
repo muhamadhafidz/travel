@@ -51,7 +51,7 @@
                                     <option value="kerangka-hiu">kerangka hiu</option>
                                     <option value="nemo">nemo</option>
                                     <option value="mangrove">mangrove</option>
-                                    <option value="fasilitas">fasilitas</option>
+                                    <option value="camping">camping</option>
                                 </select>
                                 @error('kategori')
                                     <span class="invalid-feedback" role="alert">

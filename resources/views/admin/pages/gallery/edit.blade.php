@@ -52,7 +52,7 @@
                                     <option {{ $data->kategori == "kerangka-hiu" ? 'selected' : '' }} value="kerangka-hiu">kerangka hiu</option>
                                     <option {{ $data->kategori == "nemo" ? 'selected' : '' }} value="nemo">nemo</option>
                                     <option {{ $data->kategori == "mangrove" ? 'selected' : '' }} value="mangrove">mangrove</option>
-                                    <option {{ $data->kategori == "fasilitas" ? 'selected' : '' }} value="fasilitas">fasilitas</option>
+                                    <option {{ $data->kategori == "camping" ? 'selected' : '' }} value="camping">camping</option>
                                 </select>
                                 @error('kategori')
                                     <span class="invalid-feedback" role="alert">

@@ -46,8 +46,7 @@
     <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="portfolio-flters">
-          <li data-filter="*" class="filter-active">Semua</li>
-          <li data-filter=".fasilitas">fasilitas</li>
+          <li data-filter=".camping"  class="filter-active">camping</li>
           <li data-filter=".mangrove">mangrove</li>
           <li data-filter=".nemo">nemo</li>
           <li data-filter=".kerangka-hiu">kerangka hiu</li>

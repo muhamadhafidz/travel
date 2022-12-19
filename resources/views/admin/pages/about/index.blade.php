@@ -26,7 +26,7 @@
                                 <tr>
                                     <td>{{ $data->judul }}</td>
                                     <td>{{ $data->keterangan }}</td>
-                                    <td>{{ $data->deskripsi }}</td>
+                                    <td>{!! $data->deskripsi !!}</td>
                                     <td>
                                         <a href="{{ route('admin.about.edit', $data->id) }}" class="btn btn-warning btn-sm">Ubah</a>
                                     </td>

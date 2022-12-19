@@ -26,7 +26,7 @@
                                 @foreach ($data as $item)
                                 <tr>
                                     <td>{{ $item->judul }}</td>
-                                    <td>{{ $item->deskripsi }}</td>
+                                    <td>{!! $item->deskripsi !!}</td>
                                     <td>{{ $item->tipe }}</td>
                                     <td>
                                         <a href="{{ route('admin.content.edit', $item->id) }}" class="btn btn-warning btn-sm">Ubah</a>
