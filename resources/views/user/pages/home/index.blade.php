@@ -46,7 +46,7 @@
     <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="portfolio-flters">
-          <li data-filter=".camping"  class="filter-active">camping</li>
+          <li data-filter=".camping">camping</li>
           <li data-filter=".mangrove">mangrove</li>
           <li data-filter=".nemo">nemo</li>
           <li data-filter=".kerangka-hiu">kerangka hiu</li>
@@ -126,4 +126,21 @@
 @endsection
 
 @push('after-script')
+<script>
+  $(document).ready(() => {
+    
+    var portfolioIsotope = $('.portfolio-container').isotope({
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
+    });
+
+    $("#portfolio-flters li").removeClass('filter-active');
+    $('li[data-filter=".camping"]').addClass('filter-active');
+
+    portfolioIsotope.isotope({
+      filter: $('li[data-filter=".camping"]').data('filter')
+    });
+    aos_init();
+  }) 
+</script>
 @endpush
