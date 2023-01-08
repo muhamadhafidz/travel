@@ -26,7 +26,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text text-wrap">Total Transaksi Sukses</span>
-              <span class="info-box-number">{{ App\Transaction::where('status', 'selesai')->count() }}</span>
+              <span class="info-box-number">{{ App\Transaction::where('status', 'pesanan selesai')->count() }}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -38,7 +38,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text text-wrap">Total Omzet Transaksi</span>
-              <span class="info-box-number">Rp. {{ App\Transaction::where('status', 'selesai')->sum('total_harga') }}</span>
+              <span class="info-box-number">Rp. {{ App\Transaction::where('status', 'pesanan selesai')->sum('total_harga') }}</span>
             </div>
             <!-- /.info-box-content -->
           </div>

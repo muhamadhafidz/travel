@@ -39,7 +39,9 @@ class TiketController extends Controller
         $from = Carbon::parse($request->selesai);
         $waktu = $to->diffInDays($from);
 
-        $harga = 100000 * $request->total_orang * $waktu;
+        $tiket = Ticket::first();
+
+        $harga = $tiket->harga * $request->total_orang * $waktu;
 
         Alert::toast('perhitungan berhasil dilakukan!', 'success');
         return redirect()->route('user.tiket')->with([

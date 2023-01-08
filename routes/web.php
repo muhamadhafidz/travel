@@ -56,6 +56,9 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/content/edit/{id}', 'Admin\MasterHomeContentController@edit')->name('content.edit');
         Route::put('/content/update/{id}', 'Admin\MasterHomeContentController@update')->name('content.update');
 
+        Route::get('/ticket', 'Admin\TiketController@index')->name('ticket.index');
+        Route::post('/ticket/simpan', 'Admin\TiketController@simpan')->name('ticket.simpan');
+
         Route::get('/pelanggan', 'Admin\PelangganController@index')->name('pelanggan.index');
         Route::delete('/pelanggan/destroy/{id}', 'Admin\PelangganController@destroy')->name('pelanggan.destroy');
     });

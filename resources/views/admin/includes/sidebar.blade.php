@@ -64,6 +64,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('admin.ticket.index') }}" class="nav-link {{ Request::is('admin/ticket*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-pager"></i>
+              <p>Master Harga Tiket</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.pelanggan.index') }}" class="nav-link {{ Request::is('admin/pelanggan*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users nav-icon"></i>
               <p>Pelanggan</p>

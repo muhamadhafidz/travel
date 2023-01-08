@@ -72,6 +72,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="image">Gambar</label>
+                                <input type="file" class="form-control-file" id="image" name="image">
+                            </div>
                             <div class="btn-bap text-right">
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>

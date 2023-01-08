@@ -17,6 +17,7 @@
                     <div class="card-body">
                         <table class="table table-striped display"  id="crudTable" style="width: 100%">
                             <thead>
+                                <th>Gambar</th>
                                 <th>Judul</th>
                                 <th>Deskripsi</th>
                                 <th>Tipe</th>
@@ -25,6 +26,7 @@
                             <tbody>
                                 @foreach ($data as $item)
                                 <tr>
+                                    <td><img src="{{ asset('storage/'.$item->image) }}" alt="" height="80px"></td>
                                     <td>{{ $item->judul }}</td>
                                     <td>{!! $item->deskripsi !!}</td>
                                     <td>{{ $item->tipe }}</td>
